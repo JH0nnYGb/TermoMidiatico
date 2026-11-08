@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Termo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="Logo_PET">LOGO do Pet</div>
+<div class="tela">
+
+  <!-- LADO ESQUERDO: o jogo Termo -->
+  <div class="lado lado-termo">
+    <h2>Termo</h2>
+    <div id="grade"></div>
+    <div id="teclado"></div>
+  </div>
+
+  <!-- LADO DIREITO: mensagens e o conteúdo secreto -->
+  <div class="lado">
+    <h2>Recompensa</h2>
+    <div id="mensagem"></div>
+    <section id="container-botões">
+      <button id="botao-novo">Novo jogo</button>
+      <button id="botao-dica">💡 Dica (3)</button>
+    </section>
+    
+    <div id="dica"></div>
+
+    <!-- CONTEÚDO SECRETO: coloque aqui o que você quiser (texto, imagem, link...) -->
+    <div id="conteudo" class="borrado">
+      <h3>🎁 Conteúdo secreto</h3>
+      <p>Troque este texto pelo seu conteúdo!</p>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

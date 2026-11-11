@@ -66,26 +66,51 @@ h2 {
 }
 
 /* ===== GRADE DO TERMO ===== */
+#grade{
+  width: 100%;
+  
+}
+
 .linha {
   display: flex;
+  justify-content: center;
   gap: 6px;
   margin-bottom: 6px;
+  
 }
 
 .letra {
-  width: 48px;
-  height: 48px;
+ 
+  flex: 1;
+  min-width: 0;
+  max-width: 48px;
+  aspect-ratio: 1/1;
   border: 2px solid var(--borda);
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: clamp(14px, 5vw, 24px);
   font-weight: bold;
   text-transform: uppercase;
   background: var(--card);
 }
 
+.letra.fim-palavra {
+  margin-right: 18px;
+  position: relative;       /* permite posicionar o traço em relação a este quadrado */
+}
+
+.letra.fim-palavra::after {
+  content: "";              /* sem texto: o traço é desenhado só com cor */
+  position: absolute;
+  left: calc(100% + 8px);   /* começa depois do quadrado, no meio da lacuna */
+  bottom: 8px;              /* altura do traço */
+  width: 12px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--text);
+}
 /* Cores das letras depois de enviar a palavra */
 .certa {
   background: var(--certa);
@@ -139,7 +164,7 @@ h2 {
 }
 
 #container-botões{
-
+ 
 }
 
 #botao-novo {
@@ -195,10 +220,29 @@ h2 {
 @media (max-width: 760px) {
   .tela {
     flex-direction: column;
+    min-height: auto;
   }
 
   .lado-termo {
     border-right: none;
     border-bottom: 2px solid var(--borda);
+  }
+
+  #teclado{
+    max-width: 100%;
+  }
+
+  #teclado button {
+    width: 28px;
+    height: 38;
+  }
+
+  #teclado button.grande{
+    width: 60px;
+  }
+
+  #conteudo img {
+    max-width: 100%;   /* imagem nunca passa da largura do quadro */
+    height: auto;
   }
 }
